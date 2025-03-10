@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCM = new System.Windows.Forms.TextBox();
+            this.txtCM_KeyUP = new System.Windows.Forms.TextBox();
             this.txtM = new System.Windows.Forms.TextBox();
             this.txtKM = new System.Windows.Forms.TextBox();
             this.txtYard = new System.Windows.Forms.TextBox();
@@ -106,12 +106,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "碼";
             // 
-            // txtCM
+            // txtCM_KeyUP
             // 
-            this.txtCM.Location = new System.Drawing.Point(69, 174);
-            this.txtCM.Name = "txtCM";
-            this.txtCM.Size = new System.Drawing.Size(112, 27);
-            this.txtCM.TabIndex = 1;
+            this.txtCM_KeyUP.Location = new System.Drawing.Point(69, 174);
+            this.txtCM_KeyUP.Name = "txtCM_KeyUP";
+            this.txtCM_KeyUP.Size = new System.Drawing.Size(112, 27);
+            this.txtCM_KeyUP.TabIndex = 1;
             // 
             // txtM
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.txtYard);
             this.Controls.Add(this.txtKM);
             this.Controls.Add(this.txtM);
-            this.Controls.Add(this.txtCM);
+            this.Controls.Add(this.txtCM_KeyUP);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -211,7 +211,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCM;
+        private System.Windows.Forms.TextBox txtCM_KeyUP;
         private System.Windows.Forms.TextBox txtM;
         private System.Windows.Forms.TextBox txtKM;
         private System.Windows.Forms.TextBox txtYard;
