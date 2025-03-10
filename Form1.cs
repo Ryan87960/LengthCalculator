@@ -26,5 +26,15 @@ namespace LengthCalculator
         {
 
         }
+
+        private void txtCM_KeyUP_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtInfo_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

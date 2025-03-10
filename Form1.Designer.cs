@@ -112,6 +112,7 @@
             this.txtCM_KeyUP.Name = "txtCM_KeyUP";
             this.txtCM_KeyUP.Size = new System.Drawing.Size(112, 27);
             this.txtCM_KeyUP.TabIndex = 1;
+            this.txtCM_KeyUP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCM_KeyUP_KeyUp);
             // 
             // txtM
             // 
@@ -164,6 +165,7 @@
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.Size = new System.Drawing.Size(299, 27);
             this.txtInfo.TabIndex = 3;
+            this.txtInfo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInfo_KeyUp);
             // 
             // label7
             // 
