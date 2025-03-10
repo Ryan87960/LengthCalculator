@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtCM_KeyUP = new System.Windows.Forms.TextBox();
+            this.txtCM = new System.Windows.Forms.TextBox();
             this.txtM = new System.Windows.Forms.TextBox();
             this.txtKM = new System.Windows.Forms.TextBox();
             this.txtYard = new System.Windows.Forms.TextBox();
@@ -54,7 +54,6 @@
             this.label1.Size = new System.Drawing.Size(44, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "公分";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -106,13 +105,13 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "碼";
             // 
-            // txtCM_KeyUP
+            // txtCM
             // 
-            this.txtCM_KeyUP.Location = new System.Drawing.Point(69, 174);
-            this.txtCM_KeyUP.Name = "txtCM_KeyUP";
-            this.txtCM_KeyUP.Size = new System.Drawing.Size(112, 27);
-            this.txtCM_KeyUP.TabIndex = 1;
-            this.txtCM_KeyUP.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCM_KeyUP_KeyUp);
+            this.txtCM.Location = new System.Drawing.Point(69, 174);
+            this.txtCM.Name = "txtCM";
+            this.txtCM.Size = new System.Drawing.Size(112, 27);
+            this.txtCM.TabIndex = 1;
+            this.txtCM.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCM_KeyUp);
             // 
             // txtM
             // 
@@ -157,7 +156,6 @@
             this.btnAllClear.TabIndex = 2;
             this.btnAllClear.Text = "清除";
             this.btnAllClear.UseVisualStyleBackColor = true;
-            this.btnAllClear.Click += new System.EventHandler(this.btnAllClear_Click);
             // 
             // txtInfo
             // 
@@ -190,7 +188,7 @@
             this.Controls.Add(this.txtYard);
             this.Controls.Add(this.txtKM);
             this.Controls.Add(this.txtM);
-            this.Controls.Add(this.txtCM_KeyUP);
+            this.Controls.Add(this.txtCM);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -213,7 +211,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtCM_KeyUP;
+        private System.Windows.Forms.TextBox txtCM;
         private System.Windows.Forms.TextBox txtM;
         private System.Windows.Forms.TextBox txtKM;
         private System.Windows.Forms.TextBox txtYard;
