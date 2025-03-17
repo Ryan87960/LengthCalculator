@@ -42,16 +42,23 @@ namespace LengthCalculator
 
         private void txtM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douM; //宣告一個double變數，變數名稱叫douM
-            douM = Convert.ToDouble(txtM.Text); //從txtM輸入文字框取得輸入的文字，並且轉換成double的資料型態
-            
-            
-            txtCM.Text = string.Format("{0:0.##########}", douM / 100);
-            txtKM.Text = string.Format("{0:0.##########}", douM / 1000);
-            txtIn.Text = string.Format("{0:0.##########}", douM / 0.0254);
-            txtFt.Text = string.Format("{0:0.##########}", douM / 0.3048);
-            txtYard.Text = string.Format("{0:0.##########}", douM / 0.9144);
+            strInput = txtM.Text; // 將txtM文字框的值放入strInput變數
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
 
+
+                txtCM.Text = string.Format("{0:0.##########}", douOutput / 100);
+                txtKM.Text = string.Format("{0:0.##########}", douOutput / 1000);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput / 0.0254);
+                txtFt.Text = string.Format("{0:0.##########}", douOutput / 0.3048);
+                txtYard.Text = string.Format("{0:0.##########}", douOutput / 0.9144);
+
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtM.Text = "";
+            }
         }
 
         private void txtKM_KeyUp(object sender, KeyEventArgs e)
