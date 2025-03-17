@@ -169,7 +169,6 @@
             this.txtInfo.Name = "txtInfo";
             this.txtInfo.Size = new System.Drawing.Size(299, 27);
             this.txtInfo.TabIndex = 3;
-            this.txtInfo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInfo_KeyUp);
             // 
             // label7
             // 
