@@ -50,8 +50,8 @@ namespace LengthCalculator
         private void txtM_KeyUp(object sender, KeyEventArgs e)
         {
             double douM; //宣告一個double變數，變數名稱叫douM
-
             douM = Convert.ToDouble(txtM.Text); //從txtM輸入文字框取得輸入的文字，並且轉換成double的資料型態
+            
             txtCM.Text = string.Format("{0:0.##########}", douM / 100);
             txtKM.Text = string.Format("{0:0.##########}", douM / 1000);
             txtIn.Text = string.Format("{0:0.##########}", douM / 0.0254);
@@ -93,8 +93,20 @@ namespace LengthCalculator
             txtM.Text = string.Format("{0:0.##########}", douFt * 0.3048);
             txtKM.Text = string.Format("{0:0.##########}", douFt * 0.0003048);
             txtIn.Text = string.Format("{0:0.##########}", douFt *12);
-            txtYard.Text = string.Format("{0:0.##########}", douFt * 3);
+            txtYard.Text = string.Format("{0:0.##########}", douFt * 0.33);
 
+        }
+
+        private void txtYard_KeyUp(object sender, KeyEventArgs e)
+        {
+            double douYard; //宣告一個double變數，變數名稱叫douFt
+            douYard = Convert.ToDouble(txtYard.Text);
+
+            txtCM.Text = string.Format("{0:0.##########}", douYard * 91.44);
+            txtM.Text = string.Format("{0:0.##########}", douYard * 0.9144);
+            txtKM.Text = string.Format("{0:0.##########}", douYard * 0.0009144);
+            txtIn.Text = string.Format("{0:0.##########}", douYard * 36);
+            txtFt.Text = string.Format("{0:0.##########}", douYard * 3);
         }
     }
 }
