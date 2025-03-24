@@ -19,18 +19,26 @@ namespace LengthCalculator
         // 全域變數
         string strInput; // 字串型態的strInput變數
         double douOutput; // double浮點數型態的douOutput變數
+        void caculateAnswer(int 參數1, double 參數2)
+        {
+            txtCM.Text = string.Format("{0:0.##########}", 參數2);
+            txtM.Text = string.Format("{0:0.##########}", 參數2 / 100);
+            txtKM.Text = string.Format("{0:0.##########}", 參數2 / 10000);
+            txtIn.Text = string.Format("{0:0.##########}", 參數2 / 2.54);
+            txtFt.Text = string.Format("{0:0.##########}", 參數2 / 30.48);
+            txtYard.Text = string.Format("{0:0.##########}", 參數2 / 91.44);
+        }
         private void txtCM_KeyUp(object sender, EventArgs e)
         {
             strInput = txtCM.Text; // 將txtCM文字框的值放入strInput變數
+            
 
             // 判斷式，如果能夠以double.TryParse成功轉型，那才做數值的計算
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                txtM.Text = string.Format("{0:0.##########}", douOutput / 100);
-                txtKM.Text = string.Format("{0:0.##########}", douOutput / 100000);
-                txtIn.Text = string.Format("{0:0.##########}", douOutput / 2.54);
-                txtFt.Text = string.Format("{0:0.##########}", douOutput / 30.48);
-                txtYard.Text = string.Format("{0:0.##########}", douOutput / 91.44);
+                
+                //執行計算長度函式
+                caculateAnswer(0, douOutput);
             }
             else
             {
@@ -47,11 +55,7 @@ namespace LengthCalculator
             {
 
 
-                txtCM.Text = string.Format("{0:0.##########}", douOutput / 100);
-                txtKM.Text = string.Format("{0:0.##########}", douOutput / 1000);
-                txtIn.Text = string.Format("{0:0.##########}", douOutput / 0.0254);
-                txtFt.Text = string.Format("{0:0.##########}", douOutput / 0.3048);
-                txtYard.Text = string.Format("{0:0.##########}", douOutput / 0.9144);
+                caculateAnswer(1, douOutput * 100); // 事先將公尺轉換成公分
 
             }
             else
@@ -66,16 +70,12 @@ namespace LengthCalculator
             strInput = txtKM.Text; // 將txtM文字框的值放入strInput變數
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
-                txtM.Text = string.Format("{0:0.##########}", douOutput * 1000);
-                txtIn.Text = string.Format("{0:0.##########}", douOutput * 39370.1);
-                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3280.84);
-                txtYard.Text = string.Format("{0:0.##########}", douOutput * 1093.61);
+                caculateAnswer(2, douOutput * 10000); // 事先將公里轉換成公分
             }
             else
             {
                 txtInfo.Text = "請輸入數字";
-                txtM.Text = "";
+                txtKM.Text = "";
             }
         }
 
@@ -84,16 +84,12 @@ namespace LengthCalculator
             strInput = txtIn.Text; // 將txtM文字框的值放入strInput變數
             if (double.TryParse(strInput, out douOutput) == true)
          {
-            txtCM.Text = string.Format("{0:0.##########}", douOutput * 2.54);
-            txtM.Text = string.Format("{0:0.##########}", douOutput * 0.0254);
-            txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0000254);
-            txtFt.Text = string.Format("{0:0.##########}", douOutput * 0.083);
-            txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.027);
-        }
+            caculateAnswer(3, douOutput * 2.54); // 事先將英吋轉換成公分
+            }
             else
             {
                 txtInfo.Text = "請輸入數字";
-                txtM.Text = "";
+                txtIn.Text = "";
             }
         }
 
@@ -102,16 +98,12 @@ namespace LengthCalculator
             strInput = txtFt.Text; // 將txtM文字框的值放入strInput變數
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                txtCM.Text = string.Format("{0:0.##########}", douOutput * 30.48);
-                txtM.Text = string.Format("{0:0.##########}", douOutput * 0.3048);
-                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0003048);
-                txtIn.Text = string.Format("{0:0.##########}", douOutput * 12);
-                txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.33);
+               caculateAnswer(4, douOutput * 30.48); // 事先將英尺轉換成公分
             }
             else
             {
                 txtInfo.Text = "請輸入數字";
-                txtM.Text = "";
+                txtFt.Text = "";
             }
         }
 
@@ -120,16 +112,12 @@ namespace LengthCalculator
             strInput = txtYard.Text; // 將txtM文字框的值放入strInput變數
             if (double.TryParse(strInput, out douOutput) == true)
             {
-                txtCM.Text = string.Format("{0:0.##########}", douOutput * 91.44);
-                txtM.Text = string.Format("{0:0.##########}", douOutput * 0.9144);
-                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0009144);
-                txtIn.Text = string.Format("{0:0.##########}", douOutput * 36);
-                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3);
+                caculateAnswer(5, douOutput * 91.44); // 事先將碼轉換成公分
             }
             else
             {
                 txtInfo.Text = "請輸入數字";
-                txtM.Text = "";
+                txtYard.Text = "";
             }
         }
 
