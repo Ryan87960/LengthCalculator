@@ -63,51 +63,54 @@ namespace LengthCalculator
 
         private void txtKM_KeyUp(object sender, KeyEventArgs e)
         {
-            double douKM; //宣告一個double變數，變數名稱叫douKM
-            douKM = Convert.ToDouble( txtKM.Text);
-
-            txtCM.Text = string.Format("{0:0.##########}", douKM * 100);
-            txtM.Text = string.Format("{0:0.##########}", douKM * 1000);
-            txtIn.Text = string.Format("{0:0.##########}", douKM * 39370.1);
-            txtFt.Text = string.Format("{0:0.##########}", douKM * 3280.84);
-            txtYard.Text = string.Format("{0:0.##########}", douKM * 1093.61);
+            strInput = txtKM.Text; // 將txtM文字框的值放入strInput變數
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                txtCM.Text = string.Format("{0:0.##########}", douOutput * 100);
+                txtM.Text = string.Format("{0:0.##########}", douOutput * 1000);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput * 39370.1);
+                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3280.84);
+                txtYard.Text = string.Format("{0:0.##########}", douOutput * 1093.61);
+            }
         }
 
         private void txtIn_KeyUp(object sender, KeyEventArgs e)
         {
-            double douIn; //宣告一個double變數，變數名稱叫douIn
-            douIn = Convert.ToDouble(txtIn.Text);
-           
-            txtCM.Text = string.Format("{0:0.##########}", douIn * 2.54);
-            txtM.Text = string.Format("{0:0.##########}", douIn * 0.0254);
-            txtKM.Text = string.Format("{0:0.##########}", douIn * 0.0000254);
-            txtFt.Text = string.Format("{0:0.##########}", douIn * 0.083);
-            txtYard.Text = string.Format("{0:0.##########}", douIn * 0.027);
+            strInput = txtIn.Text; // 將txtM文字框的值放入strInput變數
+            if (double.TryParse(strInput, out douOutput) == true)
+         {
+            txtCM.Text = string.Format("{0:0.##########}", douOutput * 2.54);
+            txtM.Text = string.Format("{0:0.##########}", douOutput * 0.0254);
+            txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0000254);
+            txtFt.Text = string.Format("{0:0.##########}", douOutput * 0.083);
+            txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.027);
+        }
         }
 
         private void txtFt_KeyUp(object sender, KeyEventArgs e)
         {
-            double douFt; //宣告一個double變數，變數名稱叫douFt
-            douFt = Convert.ToDouble(txtFt.Text);
-           
-            txtCM.Text = string.Format("{0:0.##########}", douFt * 30.48);
-            txtM.Text = string.Format("{0:0.##########}", douFt * 0.3048);
-            txtKM.Text = string.Format("{0:0.##########}", douFt * 0.0003048);
-            txtIn.Text = string.Format("{0:0.##########}", douFt *12);
-            txtYard.Text = string.Format("{0:0.##########}", douFt * 0.33);
-
+            strInput = txtFt.Text; // 將txtM文字框的值放入strInput變數
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                txtCM.Text = string.Format("{0:0.##########}", douOutput * 30.48);
+                txtM.Text = string.Format("{0:0.##########}", douOutput * 0.3048);
+                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0003048);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput * 12);
+                txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.33);
+            }
         }
 
         private void txtYard_KeyUp(object sender, KeyEventArgs e)
         {
-            double douYard; //宣告一個double變數，變數名稱叫douFt
-            douYard = Convert.ToDouble(txtYard.Text);
-
-            txtCM.Text = string.Format("{0:0.##########}", douYard * 91.44);
-            txtM.Text = string.Format("{0:0.##########}", douYard * 0.9144);
-            txtKM.Text = string.Format("{0:0.##########}", douYard * 0.0009144);
-            txtIn.Text = string.Format("{0:0.##########}", douYard * 36);
-            txtFt.Text = string.Format("{0:0.##########}", douYard * 3);
+            strInput = txtYard.Text; // 將txtM文字框的值放入strInput變數
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                txtCM.Text = string.Format("{0:0.##########}", douOutput * 91.44);
+                txtM.Text = string.Format("{0:0.##########}", douOutput * 0.9144);
+                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0009144);
+                txtIn.Text = string.Format("{0:0.##########}", douOutput * 36);
+                txtFt.Text = string.Format("{0:0.##########}", douOutput * 3);
+            }
         }
 
         private void btnAllClear_Click(object sender, EventArgs e)
