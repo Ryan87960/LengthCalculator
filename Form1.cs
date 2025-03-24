@@ -72,6 +72,11 @@ namespace LengthCalculator
                 txtFt.Text = string.Format("{0:0.##########}", douOutput * 3280.84);
                 txtYard.Text = string.Format("{0:0.##########}", douOutput * 1093.61);
             }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtM.Text = "";
+            }
         }
 
         private void txtIn_KeyUp(object sender, KeyEventArgs e)
@@ -85,6 +90,11 @@ namespace LengthCalculator
             txtFt.Text = string.Format("{0:0.##########}", douOutput * 0.083);
             txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.027);
         }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtM.Text = "";
+            }
         }
 
         private void txtFt_KeyUp(object sender, KeyEventArgs e)
@@ -98,6 +108,11 @@ namespace LengthCalculator
                 txtIn.Text = string.Format("{0:0.##########}", douOutput * 12);
                 txtYard.Text = string.Format("{0:0.##########}", douOutput * 0.33);
             }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtM.Text = "";
+            }
         }
 
         private void txtYard_KeyUp(object sender, KeyEventArgs e)
@@ -110,6 +125,11 @@ namespace LengthCalculator
                 txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.0009144);
                 txtIn.Text = string.Format("{0:0.##########}", douOutput * 36);
                 txtFt.Text = string.Format("{0:0.##########}", douOutput * 3);
+            }
+            else
+            {
+                txtInfo.Text = "請輸入數字";
+                txtM.Text = "";
             }
         }
 
